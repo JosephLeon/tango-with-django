@@ -8,15 +8,11 @@ from rango.models import Category, Page
 
 
 def populate():
-    python_cat = add_cat(
-        name='Python',
-        views=128,
-        likes=64)
-
-    # add_cat(
+    python_cat = add_cat(name="Python")
+    # python_cat = add_cat(
     #     name='Python',
-    #     views=128,
-    #     likes=64)
+    #     cat_views=128,
+    #     cat_likes=64)
 
     add_page(
         cat=python_cat,
@@ -33,10 +29,11 @@ def populate():
         title="Learn Python in 10 Minutes",
         url="http://www.korokithakis.net/tutorials/python/")
 
-    django_cat = add_cat(
-        name="Django",
-        views=64,
-        likes=32)
+    django_cat = add_cat(name="Django")
+    # django_cat = add_cat(
+    #     name="Django",
+    #     cat_views=64,
+    #     cat_likes=32)
 
     add_page(
         cat=django_cat,
@@ -53,10 +50,11 @@ def populate():
         title="How to Tango with Django",
         url="http://www.tangowithdjango.com/")
 
-    frame_cat = add_cat(
-        name="Other Frameworks",
-        views=32,
-        likes=16)
+    frame_cat = add_cat(name="Other Frameworks")
+    # frame_cat = add_cat(
+    #     name="Other Frameworks",
+    #     cat_views=32,
+    #     cat_likes=16)
 
     add_page(
         cat=frame_cat,
@@ -78,8 +76,13 @@ def add_page(cat, title, url, views=0):
     return p
 
 
-def add_cat(name, views, likes):
-    c = Category.objects.get_or_create(name=name, views=views, likes=likes)[0]
+# def add_cat(name, cat_views, cat_likes):
+#     c = Category.objects.get_or_create(name=name, cat_views=cat_views, cat_likes=cat_likes)[0]
+#     return c
+
+
+def add_cat(name):
+    c = Category.objects.get_or_create(name=name)[0]
     return c
 
 if __name__ == '__main__':
