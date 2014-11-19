@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+{% load staticfiles %} <!-- New line -->
+
+<html>
+
+    <head>
+        <title>Rango - About</title>
+    </head>
+
+    <body>
+        <h1>About Page</h1>
+        <p>{{shorttext}}</p>
+        <p><a href="{% url 'index' %}">Home page.</a></p>
+    </body>
+
+</html>
