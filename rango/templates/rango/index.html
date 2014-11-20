@@ -10,6 +10,17 @@
 
     <body>
         <h1>Rango says...</h1>
+
+        {% if categories %}
+            <ul>
+                {% for category in categories %}
+                <li>{{ category.name }}</li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <strong>There are no categories present.</strong>
+        {% endif %}
+
         hello world! <strong>{{ boldmessage }}</strong><br />
         <a href="/rango/about/">About</a><br />
         <img src="{% static "images/mudpuddle.png" %}" alt="">
