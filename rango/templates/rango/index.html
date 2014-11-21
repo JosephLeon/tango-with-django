@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load staticfiles %} <!-- New line -->
+
 <html>
     <head>
         <title>Rango</title>
@@ -18,8 +19,17 @@
             <strong>There are no categories present.</strong>
         {% endif %}
 
-        hello world! <strong>{{ boldmessage }}</strong><br />
-        <a href="/rango/about/">About</a><br />
+        {% if pages %}
+          <ul>
+            {% for page in pages %}
+            <li>{{ page.title }} - {{ page.views }} views</li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p>there are NO pages.</p>
+        {% endif %}
+        <p>hello world! <strong>{{ boldmessage }}</strong><br /></p>
+        <p><a href="/rango/about/">About</a><br /></p>
         <img src="{% static "images/mudpuddle.png" %}" alt="">
     </body>
 
