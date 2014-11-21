@@ -16,17 +16,20 @@ def populate():
     add_page(
         cat=python_cat,
         title="Official Python Tutorial",
-        url="http://docs.python.org/2/tutorial/")
+        url="http://docs.python.org/2/tutorial/",
+        views=128)
 
     add_page(
         cat=python_cat,
         title="How to Think like a Computer Scientist",
-        url="http://www.greenteapress.com/thinkpython/")
+        url="http://www.greenteapress.com/thinkpython/",
+        views=47)
 
     add_page(
         cat=python_cat,
         title="Learn Python in 10 Minutes",
-        url="http://www.korokithakis.net/tutorials/python/")
+        url="http://www.korokithakis.net/tutorials/python/",
+        views=8)
 
     django_cat = add_cat(
         name="Django",
@@ -36,17 +39,20 @@ def populate():
     add_page(
         cat=django_cat,
         title="Official Django Tutorial",
-        url="https://docs.djangoproject.com/en/1.5/intro/tutorial01/")
+        url="https://docs.djangoproject.com/en/1.5/intro/tutorial01/",
+        views=267)
 
     add_page(
         cat=django_cat,
         title="Django Rocks",
-        url="http://www.djangorocks.com/")
+        url="http://www.djangorocks.com/",
+        views=63)
 
     add_page(
         cat=django_cat,
         title="How to Tango with Django",
-        url="http://www.tangowithdjango.com/")
+        url="http://www.tangowithdjango.com/",
+        views=123)
 
     frame_cat = add_cat(
         name="Other Frameworks",
@@ -56,12 +62,14 @@ def populate():
     add_page(
         cat=frame_cat,
         title="Bottle",
-        url="http://bottlepy.org/docs/dev/")
+        url="http://bottlepy.org/docs/dev/",
+        views=35)
 
     add_page(
         cat=frame_cat,
         title="Flask",
-        url="http://flask.pocoo.org")
+        url="http://flask.pocoo.org",
+        views=167)
 
     for c in Category.objects.all():
         for p in Page.objects.filter(category=c):
@@ -69,7 +77,7 @@ def populate():
 
 
 def add_page(cat, title, url, views=0):
-    p = Page.objects.get_or_create(category=cat, title=title, url=url, views=views)[0]
+    p = Page.objects.get_or_create(category=cat, title=title, url=url, views=views)[0],
     return p
 
 
