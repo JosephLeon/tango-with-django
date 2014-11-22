@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rango</title>
+        <title>Rango - {{ category_name }}</title>
     </head>
 
     <body>
         <h1>{{ category_name }}</h1>
+        <p>Back to <a href="/rango/" title="Home">Home</a></p>
         {% if category %}
             {% if pages %}
             <ul>
