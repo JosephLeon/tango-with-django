@@ -52,6 +52,7 @@ def add_page(request, category_name_slug):
         cat = Category.objects.get(slug=category_name_slug)
     except Category.DoesNotExist:
         cat = None
+
     if request.method == 'POST':
         form = PageForm(request.POST)
         if form.is_valid():

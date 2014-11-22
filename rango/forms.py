@@ -23,10 +23,10 @@ class PageForm(forms.ModelForm):
         exclude = ('category',)
         fields = ('title', 'url', 'views')
 
-    def clean(self):
-        cleaned_data = self.cleaned_data
-        url = cleaned_data('url')
-        if url and not url.startswith('http://'):
-            url = 'http://' + url
-            cleaned_data['url'] = url
-        return cleaned_data
+    # def clean(self):
+    #     cleaned_data = self.cleaned_data
+    #     url = cleaned_data('url')
+    #     if url and not url.startswith('http://'):
+    #         url = 'http://' + url
+    #         cleaned_data['url'] = url
+    #     return cleaned_data
