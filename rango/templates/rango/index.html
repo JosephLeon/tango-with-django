@@ -9,6 +9,12 @@
     <body>
         <h1>Rango says...</h1>
 
+        <a href="/rango/login/">Login</a>
+        <p><a href="/rango/register/">Register Here</a></p>
+        <p><a href="/rango/about/">About</a><br /></p>
+        <p><a href="/rango/add_category/">Add a New Category</a></p>
+        <!-- <p><a href="/rango/add_page/">Add a New Page</a></p> -->
+
         {% if categories %}
           <h3>Categories</h3>
           <ul>
@@ -31,10 +37,7 @@
           <p>there are NO pages.</p>
         {% endif %}
         <p>hello world! <strong>{{ boldmessage }}</strong><br /></p>
-        <p><a href="/rango/about/">About</a><br /></p>
-        <p><a href="/rango/add_category/">Add a New Category</a></p>
-        <!-- <p><a href="/rango/add_page/">Add a New Page</a></p> -->
-        <p><a href="/rango/register/">Register Here</a></p>
+
         <img src="{% static "images/mudpuddle.png" %}" alt="">
     </body>
 
