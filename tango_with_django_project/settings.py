@@ -92,6 +92,8 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
+LOGIN_URL = '/rango/login/'
+
 # STATIC_PATH = os.path.join(BASE_DIR, 'static')
 # STATICFILES_DIRS = (
 #     STATIC_PATH,
