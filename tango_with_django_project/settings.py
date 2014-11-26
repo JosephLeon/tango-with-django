@@ -108,3 +108,5 @@ LOGIN_URL = '/rango/login/'
 # ]
 # print TEMPLATE_PATH
 # print TEMPLATE_DIRS
+
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
