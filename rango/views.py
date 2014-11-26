@@ -9,6 +9,7 @@ from django.contrib.auth import logout
 
 
 def index(request):
+    request.session.set_test_cookie()
     context_dict = {}
     category = Category.objects.order_by('-likes')[:5]
     pages = Page.objects.order_by('-views')[:5]
@@ -81,7 +82,9 @@ def add_page(request, category_name_slug):
 
 
 def register(request):
-
+    if request.session.test_cookie_worked():
+        print ">>>> TEST COOKIE WORKED!"
+        request.session.delete_test_cookie()
     # A boolean value for telling the template whether the registration was successful.
     # Set to False initially. Code changes value to True when registration succeeds.
     registered = False
