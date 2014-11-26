@@ -10,12 +10,9 @@ from rango.forms import UserForm
 
 
 def index(request):
-    # request.session.set_test_cookie()
-    context_dict = {}
-    category = Category.objects.order_by('-likes')[:5]
-    pages = Page.objects.order_by('-views')[:5]
-    context_dict['categories'] = category
-    context_dict['pages'] = pages
+    category_list = Category.objects.all()
+    page_list = Page.objects.order_by('-views')[:5]
+    context_dict = {'categories': category_list, 'pages': page_list}
 
     visits = int(request.COOKIES.get('visits', 0))
     reset_last_visit_time = False
@@ -36,7 +33,6 @@ def index(request):
         response.set_cookie('visits', visits)
 
     return response
-    # return render(request, 'rango/index.html', context_dict)
 
 
 def about(request):
