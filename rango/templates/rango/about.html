@@ -1,19 +1,15 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 
-{% load staticfiles %} <!-- New line -->
+{% load staticfiles %}
 
-<html>
+{% block title %}Rango - About{% endblock %}
 
-    <head>
-        <title>Rango - About</title>
-    </head>
+{% block body_block %}
+  <h1>About Page</h1>
+  <p>{{shorttext}}</p>
+  <p><a href="{% url 'index' %}">Home page.</a></p>
+  <p>Now time for the django logo!</p>
+  <img width="500" src="{% static "images/django-logo-negative.png" %}" alt="">
+{% endblock body_block %}
 
-    <body>
-        <h1>About Page</h1>
-        <p>{{shorttext}}</p>
-        <p><a href="{% url 'index' %}">Home page.</a></p>
-        <p>Now time for the django logo!</p>
-        <img width="500" src="{% static "images/django-logo-negative.png" %}" alt="">
-    </body>
 
-</html>
