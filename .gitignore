@@ -1,1 +1,9 @@
 *.pyc
+/rango/management*
+/rango/management/*
+/rango/management/commands*
+/rango/management/commands/*
+rango/management*
+rango/management/*
+rango/management/commands*
+rango/management/commands/*
