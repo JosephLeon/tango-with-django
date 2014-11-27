@@ -2,8 +2,12 @@
 
 {% load staticfiles %}
 
+{% block title %}About{% endblock %}
+
 {% block body_block %}
-  <h1>About Page</h1>
+  <div class="page-header">
+    <h1>About Page</h1>
+  </div>
   <p>{{shorttext}}</p>
   <p><a href="{% url 'index' %}">Home page.</a></p>
   <p>Now time for the django logo!</p>
