@@ -3,35 +3,50 @@
 {% load staticfiles %}
 
 {% block body_block %}
-  {% if user.is_authenticated %}
-  <h1>Rango says... hello {{ user.username }}!</h1>
-  {% else %}
-  <h1>Rango says... hello world!</h1>
-  {% endif %}
+  <div class="page-header">
+    {% if user.is_authenticated %}
+    <h1>Rango says... hello {{ user.username }}!</h1>
+    {% else %}
+    <h1>Rango says... hello world!</h1>
+    {% endif %}
+  </div>
 
-  {% if categories %}
-    <h3>Categories</h3>
-    <ul>
-        {% for category in categories %}
-        <li><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
-        {% endfor %}
-    </ul>
-  {% else %}
-    <p><strong>There are no categories present.</strong></p>
-  {% endif %}
+  <div class="row placeholders">
+    <div class="col-xs-12 col-sm-6 placeholder">
+      {% if categories %}
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Categories</h3>
+          </div>
+        </div>
+        <ul class="list-group">
+            {% for category in categories %}
+            <li class="list-group-item"><a href="/rango/category/{{ category.slug }}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+      {% else %}
+        <p><strong>There are no categories present.</strong></p>
+      {% endif %}
+    </div>
+    <div class="col-xs-12 col-sm-6 placeholder">
+      {% if pages %}
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Top 5 most viewed pages</h3>
+          </div>
+        </div>
+        <ul class="list-group">
+          {% for page in pages %}
+          <li class="list-group-item">{{ page.title }} - {{ page.views }} views</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p>there are NO pages.</p>
+      {% endif %}
+    </div>
+  </div>
 
-  {% if pages %}
-    <h3>Top 5 most viewed pages</h3>
-    <ul>
-      {% for page in pages %}
-      <li>{{ page.title }} - {{ page.views }} views</li>
-      {% endfor %}
-    </ul>
-  {% else %}
-    <p>there are NO pages.</p>
-  {% endif %}
   <p> visits: {{ visits }}</p>
   <p>hello world! <strong>{{ boldmessage }}</strong><br /></p>
-
   <img src="{% static "images/mudpuddle.png" %}" alt="">
 {% endblock body_block %}
